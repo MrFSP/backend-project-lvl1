@@ -20,7 +20,10 @@
   },
   "homepage": "https://github.com/MrFSP/project-lvl1-s504#readme",
   "dependencies": {
-    "eslint": "^6.7.1",
-    "jshint": "^2.10.3"
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "eslint": "^6.7.1"
   }
 }
