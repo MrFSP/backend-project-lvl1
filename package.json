@@ -1,0 +1,26 @@
+{
+  "name": "brain-games",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "brain-games": "src/bin/brain-games.js"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrFSP/project-lvl1-s504.git"
+  },
+  "author": "Pavel Egorov MrFSP",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrFSP/project-lvl1-s504/issues"
+  },
+  "homepage": "https://github.com/MrFSP/project-lvl1-s504#readme",
+  "dependencies": {
+    "eslint": "^6.7.1",
+    "jshint": "^2.10.3"
+  }
+}
