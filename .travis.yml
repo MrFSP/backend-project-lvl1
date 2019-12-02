@@ -1,10 +1,10 @@
 ---
 
-    language: node_js
-    node_js:
-      - node
+language: node_js
+node_js:
+  - node
     
-    script:
-      - make lint
-      - make test
+script:
+  - make lint
+  - make test
     
