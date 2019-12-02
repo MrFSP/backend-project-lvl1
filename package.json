@@ -11,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "test": "test",
+    "test": "jest",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
