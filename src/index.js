@@ -1,41 +1,60 @@
 import readlineSync from 'readline-sync';
+import brainEven from './games/braineven';
+import brainCalc from './games/braincalc';
 
-const greeting = 'Welcome to the Brain Games!\n';
 
-const name = () => readlineSync.question('May I have your name? ');
+console.log('Welcome to the Brain Games!');
 
-const helloUser = (userName) => console.log(`Hello, ${userName}!\n`);
+const name = () => readlineSync.question('\nMay I have your name? ');
 
-// Random number
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-const makeNumber = () => {
-  const number = getRandomInt(0, 100);
-  console.log(`Question: ${number}`);
-  return number % 2 === 0 ? 'yes' : 'no';
+const greeting = (gameName) => {
+  switch (gameName) {
+    case 'brain-even':
+      console.log('Answer "yes" if number even otherwise answer "no".');
+      break;
+    case 'brain calc':
+      console.log('What is the result of the expression?');
+      break;
+    default:
+  }
 };
 
-export const brainEven = () => {
-  console.log(`${greeting}Answer "yes" if number even otherwise answer "no".\n`);
-  const userName = name();
-  helloUser(userName);
-  for (let i = 0; i <= 3; i += 1) {
-    if (i === 3) {
-      console.log(`Congratulations, ${userName}!\n`);
-      break;
-    }
-    const correctAnswer = makeNumber();
+const game = (gameName) => {
+  switch (gameName) {
+    case 'brain-even':
+      return brainEven();
+    case 'brain-calc':
+      return brainCalc();
+    default:
+  }
+};
+
+const playGame = (gameName, rounds) => {
+  for (let i = 1; i <= rounds; i += 1) {
+    const correctAnswer = game(gameName);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === correctAnswer) {
       console.log('Correct!\n');
     } else {
-      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".\nLet's try again, ${userName}!\n`);
-      break;
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+      return false;
     }
   }
+  return true;
 };
 
-export const brainGames = () => {
-  console.log(greeting);
+export default function (gameName) {
+  greeting(gameName);
   const userName = name();
-  helloUser(userName);
-};
+  console.log(`Hello, ${userName}!\n`);
+  switch (gameName) {
+    case 'brain-games':
+      break;
+    default:
+      if (playGame(gameName, 3)) {
+        console.log(`Congratulations, ${userName}!\n`);
+      } else {
+        console.log(`Let's try again, ${userName}!\n`);
+      }
+  }
+}
