@@ -20,13 +20,17 @@ const greeting = (gameName) => {
 };
 
 const game = (gameName) => {
+  let answer;
   switch (gameName) {
     case 'brain-even':
-      return brainEven();
+      answer = brainEven();
+      break;
     case 'brain-calc':
-      return brainCalc();
+      answer = brainCalc();
+      break;
     default:
   }
+  return answer;
 };
 
 const playGame = (gameName, rounds) => {
