@@ -4,10 +4,8 @@ export default () => {
   const getTypeOfGame = getRandomInt(1, 3);
   let answer = 0;
   const number1 = getRandomInt(0, 100);
-  let number2 = getRandomInt(0, 100);
-  if (getTypeOfGame === 3) {
-    number2 = getRandomInt(0, 10);
-  }
+  const number2 = getTypeOfGame === 3 ? getRandomInt(0, 10) : getRandomInt(0, 100);
+
   switch (getTypeOfGame) {
     case 1:
       console.log(`Question: ${number1} + ${number2}`);

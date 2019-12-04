@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import brainEven from './games/braineven';
 import brainCalc from './games/braincalc';
-
+import brainGCD from './games/braingcd';
 
 console.log('Welcome to the Brain Games!');
 
@@ -12,8 +12,11 @@ const greeting = (gameName) => {
     case 'brain-even':
       console.log('Answer "yes" if number even otherwise answer "no".');
       break;
-    case 'brain calc':
+    case 'brain-calc':
       console.log('What is the result of the expression?');
+      break;
+    case 'brain-gcd':
+      console.log('Find the greatest common divisor of given numbers.');
       break;
     default:
   }
@@ -27,6 +30,9 @@ const game = (gameName) => {
       break;
     case 'brain-calc':
       answer = brainCalc();
+      break;
+    case 'brain-gcd':
+      answer = brainGCD();
       break;
     default:
   }

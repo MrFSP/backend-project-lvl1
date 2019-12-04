@@ -5,6 +5,7 @@
 [![Build Status](https://travis-ci.com/MrFSP/project-lvl1-s504.svg?branch=master)](https://travis-ci.com/MrFSP/project-lvl1-s504)
 
 ## brain-even asciinema: https://asciinema.org/a/lLY4zpIayAYtYJbI9EgAYzCK6
+## brain-calc asciinema:https://asciinema.org/a/8XXhMaRtmaqWz3MpwUkzoKLSO
 
 ## Setup
 
