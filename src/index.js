@@ -2,8 +2,9 @@ import readlineSync from 'readline-sync';
 import brainEven from './games/braineven';
 import brainCalc from './games/braincalc';
 import brainGCD from './games/braingcd';
+import brainProgression from './games/brainprogression';
 
-console.log('Welcome to the Brain Games!');
+console.log('\nWelcome to the Brain Games!');
 
 const name = () => readlineSync.question('\nMay I have your name? ');
 
@@ -17,6 +18,9 @@ const greeting = (gameName) => {
       break;
     case 'brain-gcd':
       console.log('Find the greatest common divisor of given numbers.');
+      break;
+    case 'brain-progression':
+      console.log('What number is missing in the progression?');
       break;
     default:
   }
@@ -33,6 +37,9 @@ const game = (gameName) => {
       break;
     case 'brain-gcd':
       answer = brainGCD();
+      break;
+    case 'brain-progression':
+      answer = brainProgression();
       break;
     default:
   }
