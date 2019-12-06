@@ -9,4 +9,5 @@ lint:
 republish:
 	sudo npm uninstall -g brain-games
 	npm run build
+	npm publish --dry-run
 	sudo npm link
