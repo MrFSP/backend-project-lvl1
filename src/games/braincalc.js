@@ -1,4 +1,4 @@
-import getRandomInt from './functions';
+import { getRandomInt } from './functions';
 
 export default () => {
   const getTypeOfGame = getRandomInt(1, 3);
