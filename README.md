@@ -8,6 +8,7 @@
 ## brain-calc asciinema:          https://asciinema.org/a/8XXhMaRtmaqWz3MpwUkzoKLSO
 ## brain-gcd asciinema:           https://asciinema.org/a/xkKKVVyWpJ30lHsrrl0iOxyWB
 ## brain-progression asciinema:   https://asciinema.org/a/2hekFYqehyQY1FcXbWi4NF26M
+## brain-prime asciinema          https://asciinema.org/a/M8mFIQIJCEk6msJz2utBSx9nz
 
 ## Setup
 
