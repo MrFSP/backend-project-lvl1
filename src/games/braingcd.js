@@ -15,7 +15,7 @@ const number = () => {
 export default () => {
   const number1 = number();
   const num2 = () => {
-    let answer;
+    let answer = number();
     while (number1 === answer) {
       answer = number();
     }
