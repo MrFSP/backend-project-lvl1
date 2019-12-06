@@ -3,12 +3,14 @@ import brainEven from './games/braineven';
 import brainCalc from './games/braincalc';
 import brainGCD from './games/braingcd';
 import brainProgression from './games/brainprogression';
+import brainPrime from './games/brainprime';
 
-console.log('\nWelcome to the Brain Games!');
+const numberOfRounds = 3; // Number of rounds of game
 
 const name = () => readlineSync.question('\nMay I have your name? ');
 
 const greeting = (gameName) => {
+  console.log('\nWelcome to the Brain Games!');
   switch (gameName) {
     case 'brain-even':
       console.log('Answer "yes" if number even otherwise answer "no".');
@@ -21,6 +23,9 @@ const greeting = (gameName) => {
       break;
     case 'brain-progression':
       console.log('What number is missing in the progression?');
+      break;
+    case 'brain-prime':
+      console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
       break;
     default:
   }
@@ -40,6 +45,9 @@ const game = (gameName) => {
       break;
     case 'brain-progression':
       answer = brainProgression();
+      break;
+    case 'brain-prime':
+      answer = brainPrime();
       break;
     default:
   }
@@ -68,7 +76,7 @@ export default function (gameName) {
     case 'brain-games':
       break;
     default:
-      if (playGame(gameName, 3)) {
+      if (playGame(gameName, numberOfRounds)) {
         console.log(`Congratulations, ${userName}!\n`);
       } else {
         console.log(`Let's try again, ${userName}!\n`);
