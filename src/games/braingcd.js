@@ -1,21 +1,27 @@
 import { getRandomInt, isInt } from './functions';
 
-export default () => {
-  const minCommonDivisor = getRandomInt(2, 20);
+const highBorderOfNumbers = 100; // High border of numbers
+const maxOfRanMinCommonDivisor = 20; // Max number of random min common divisor
+const ranMinCommonDivisor = getRandomInt(2, maxOfRanMinCommonDivisor); // Random min common divisor
 
-  const number = () => {
-    let result;
-    while (result % minCommonDivisor !== 0) {
-      result = getRandomInt(2, 100);
-    }
-    return result;
-  };
-  let number1;
-  let number2;
-  while (number1 === number2) {
-    number1 = number();
-    number2 = number();
+const number = () => {
+  let result;
+  while (result % ranMinCommonDivisor !== 0) {
+    result = getRandomInt(2, highBorderOfNumbers);
   }
+  return result;
+};
+
+export default () => {
+  const number1 = number();
+  const num2 = () => {
+    let answer;
+    while (number1 === answer) {
+      answer = number();
+    }
+    return answer;
+  };
+  const number2 = num2();
   console.log(`Question: ${number1} ${number2}`);
   const minNumber = number1 < number2 ? number1 : number2;
   let divisor = minNumber;
