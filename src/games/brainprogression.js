@@ -2,7 +2,6 @@ import { getRandomInt } from './functions';
 
 // Arithmetic progression
 
-
 const minStepOfProgr = 1; // Min step of Arithmetic progression
 const maxStepOfProgr = 9; // Max step of Arithmetic progression
 const numderOfMembers = 10; // Number of members of Arithmetic progression
