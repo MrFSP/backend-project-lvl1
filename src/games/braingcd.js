@@ -1,23 +1,23 @@
 import { getRandomInt, isInt } from './functions';
 
 const highBorderOfNumbers = 100; // High border of numbers
-const maxOfRanMinCommonDivisor = 20; // Max number of random min common divisor
-const ranMinCommonDivisor = getRandomInt(2, maxOfRanMinCommonDivisor); // Random min common divisor
+const maxRanMinCommonDivisor = 20; // Max number of random min common divisor
 
-const number = () => {
+const number = (MinCommonDivisor) => {
   let result;
-  while (result % ranMinCommonDivisor !== 0) {
+  while (result % MinCommonDivisor !== 0) {
     result = getRandomInt(2, highBorderOfNumbers);
   }
   return result;
 };
 
 export default () => {
-  const number1 = number();
+  const ranMinCommonDivisor = getRandomInt(2, maxRanMinCommonDivisor);
+  const number1 = number(ranMinCommonDivisor);
   const num2 = () => {
-    let answer = number();
+    let answer = number(ranMinCommonDivisor);
     while (number1 === answer) {
-      answer = number();
+      answer = number(ranMinCommonDivisor);
     }
     return answer;
   };
