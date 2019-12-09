@@ -7,24 +7,23 @@ const maxStepOfProgr = 9; // Max step of Arithmetic progression
 const numderOfMembers = 10; // Number of members of Arithmetic progression
 const maxFirstMemberOfProgr = 9; // Max first member of Arithmetic progression
 
-export default () => {
-  const arithmeticProgression = () => {
-    const stepOfProgr = getRandomInt(minStepOfProgr, maxStepOfProgr);
-    const indexOfHiddenNumber = getRandomInt(1, numderOfMembers);
-    let numOfProgr = getRandomInt(1, maxFirstMemberOfProgr);
-    let answer;
-    let question = 'Question: ';
-    for (let i = 1; i <= numderOfMembers; i += 1) {
-      if (i !== indexOfHiddenNumber) {
-        question += `${numOfProgr} `;
-      } else {
-        answer = numOfProgr;
-        question += '.. ';
-      }
-      numOfProgr += stepOfProgr;
+const getArithmeticProgression = () => {
+  const getStepOfProgr = getRandomInt(minStepOfProgr, maxStepOfProgr);
+  const getIndexOfHiddenNumber = getRandomInt(1, numderOfMembers);
+  let nextNumOfProgr = getRandomInt(1, maxFirstMemberOfProgr);
+  let answer;
+  let progression = 'Question: ';
+  for (let i = 1; i <= numderOfMembers; i += 1) {
+    if (i !== getIndexOfHiddenNumber) {
+      progression += `${nextNumOfProgr} `;
+    } else {
+      answer = nextNumOfProgr;
+      progression += '.. ';
     }
-    console.log(question);
-    return answer;
-  };
-  return String(arithmeticProgression());
+    nextNumOfProgr += getStepOfProgr;
+  }
+  console.log(progression);
+  return answer;
 };
+
+export default () => String(getArithmeticProgression());

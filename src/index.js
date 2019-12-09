@@ -1,15 +1,15 @@
 import readlineSync from 'readline-sync';
-import brainEven from './games/braineven';
-import brainCalc from './games/braincalc';
-import brainGCD from './games/braingcd';
-import brainProgression from './games/brainprogression';
-import brainPrime from './games/brainprime';
+import playBrainEven from './games/braineven';
+import playBrainCalc from './games/braincalc';
+import playBrainGCD from './games/braingcd';
+import playBrainProgression from './games/brainprogression';
+import playBrainPrime from './games/brainprime';
 
 const numberOfRounds = 3; // Number of rounds of game
 
-const name = () => readlineSync.question('\nMay I have your name? ');
+const getName = () => readlineSync.question('\nMay I have your name? ');
 
-const greeting = (gameName) => {
+const showGreeting = (gameName) => {
   console.log('\nWelcome to the Brain Games!');
   switch (gameName) {
     case 'brain-even':
@@ -31,32 +31,32 @@ const greeting = (gameName) => {
   }
 };
 
-const game = (gameName) => {
+const selectTypeOfGame = (gameName) => {
   let answer;
+  // eslint-disable-next-line default-case
   switch (gameName) {
     case 'brain-even':
-      answer = brainEven();
+      answer = playBrainEven();
       break;
     case 'brain-calc':
-      answer = brainCalc();
+      answer = playBrainCalc();
       break;
     case 'brain-gcd':
-      answer = brainGCD();
+      answer = playBrainGCD();
       break;
     case 'brain-progression':
-      answer = brainProgression();
+      answer = playBrainProgression();
       break;
     case 'brain-prime':
-      answer = brainPrime();
+      answer = playBrainPrime();
       break;
-    default:
   }
   return answer;
 };
 
 const playGame = (gameName, rounds) => {
   for (let i = 1; i <= rounds; i += 1) {
-    const correctAnswer = game(gameName);
+    const correctAnswer = selectTypeOfGame(gameName);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === correctAnswer) {
       console.log('Correct!\n');
@@ -69,8 +69,8 @@ const playGame = (gameName, rounds) => {
 };
 
 export default function (gameName) {
-  greeting(gameName);
-  const userName = name();
+  showGreeting(gameName);
+  const userName = getName();
   console.log(`Hello, ${userName}!\n`);
   switch (gameName) {
     case 'brain-games':
