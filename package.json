@@ -1,7 +1,12 @@
 {
   "name": "brain-games",
   "version": "1.0.0",
-  "description": "",
+  "description": "Project #1 within education on hexlet.io in profession 'Backend JavaScript(Node.js)'",
+  "keywords": [
+    "education",
+    "brain-games",
+    "hexlet.io"
+  ],
   "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
@@ -47,6 +52,7 @@
     "eslint-plugin-jest": "^23.1.1",
     "jest": "^24.9.0",
     "jest-cli": "^24.9.0",
+    "source-map-support": "git+https://github.com/evanw/node-source-map-support.git",
     "tsutils": "^3.17.1",
     "typescript": "^3.7.3"
   },
