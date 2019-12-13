@@ -1,7 +1,10 @@
-import { getRandomInt, isInt } from './functions';
+import { getRandomInt, isInt } from '../gamemodules/functions';
+
+import game from '..';
 
 const highBorderOfNumbers = 100; // High border of numbers
 const maxRanMinCommonDivisor = 20; // Max number of random min common divisor
+export const task = 'Find the greatest common divisor of given numbers.\n';
 
 const getNumber = (minCommonDivisor) => {
   let result;
@@ -11,17 +14,18 @@ const getNumber = (minCommonDivisor) => {
   return result;
 };
 
-export default () => {
+const num2 = (num1, minCommonDivisor) => {
+  let answer = getNumber(minCommonDivisor);
+  while (num1 === answer) {
+    answer = getNumber(minCommonDivisor);
+  }
+  return answer;
+};
+
+const gcd = () => {
   const ranMinCommonDivisor = getRandomInt(2, maxRanMinCommonDivisor);
   const number1 = getNumber(ranMinCommonDivisor);
-  const num2 = () => {
-    let answer = getNumber(ranMinCommonDivisor);
-    while (number1 === answer) {
-      answer = getNumber(ranMinCommonDivisor);
-    }
-    return answer;
-  };
-  const number2 = num2();
+  const number2 = num2(number1, ranMinCommonDivisor);
   console.log(`Question: ${number1} ${number2}`);
   const minNumber = number1 < number2 ? number1 : number2;
   let divisor = minNumber;
@@ -33,3 +37,5 @@ export default () => {
   }
   return String(divisor);
 };
+
+export default () => game(task, gcd);

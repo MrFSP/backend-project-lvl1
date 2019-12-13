@@ -1,6 +1,10 @@
-import { getRandomInt } from './functions';
+import { getRandomInt } from '../gamemodules/functions';
 
-export default () => {
+import game from '..';
+
+const task = 'What is the result of the expression?\n';
+
+const calc = () => {
   const getTypeOfOperator = getRandomInt(1, 3);
   let answer = 0;
   const getFirstMember = getRandomInt(0, 100); // First member for all expressions
@@ -25,3 +29,5 @@ export default () => {
   }
   return String(answer);
 };
+
+export default () => game(task, calc);
