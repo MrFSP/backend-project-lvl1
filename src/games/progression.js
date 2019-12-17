@@ -1,4 +1,4 @@
-import { getRandomInt } from '../gamemodules/functions';
+import { getRandomInt } from '../other/functions';
 
 import game from '..';
 
@@ -11,25 +11,23 @@ const maxFirstMemberOfProgr = 9; // Max first member of Arithmetic progression
 
 export const task = 'What number is missing in the progression?\n';
 
-const getArithmeticProgression = () => {
+const getQuestion = () => {
   const getStepOfProgr = getRandomInt(minStepOfProgr, maxStepOfProgr);
   const getIndexOfHiddenNumber = getRandomInt(1, numderOfMembers);
   let nextNumOfProgr = getRandomInt(1, maxFirstMemberOfProgr);
   let answer;
-  let progression = 'Question: ';
+  let progression = '';
   for (let i = 1; i <= numderOfMembers; i += 1) {
     if (i !== getIndexOfHiddenNumber) {
       progression += `${nextNumOfProgr} `;
     } else {
-      answer = nextNumOfProgr;
+      answer = String(nextNumOfProgr);
       progression += '.. ';
     }
     nextNumOfProgr += getStepOfProgr;
   }
-  console.log(progression);
-  return answer;
+  const question = progression;
+  return { question, answer };
 };
 
-const progression = () => String(getArithmeticProgression());
-
-export default () => game(task, progression);
+export default () => game({ task, getQuestion });

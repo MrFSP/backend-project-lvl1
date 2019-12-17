@@ -1,33 +1,24 @@
-import { getRandomInt } from '../gamemodules/functions';
+import { getRandomInt } from '../other/functions';
 
 import game from '..';
 
 const task = 'What is the result of the expression?\n';
 
-const calc = () => {
-  const getTypeOfOperator = getRandomInt(1, 3);
-  let answer = 0;
-  const getFirstMember = getRandomInt(0, 100); // First member for all expressions
-  // eslint-disable-next-line max-len
-  const getSecondMember = getRandomInt(0, 100); // Second member for all expressions (except multiplication)
-  const getMultiplier = getRandomInt(0, 10); // Second member for multiplication
-
-  switch (getTypeOfOperator) {
-    case 1:
-      console.log(`Question: ${getFirstMember} + ${getSecondMember}`);
-      answer = getFirstMember + getSecondMember;
-      break;
-    case 2:
-      console.log(`Question: ${getFirstMember} - ${getSecondMember}`);
-      answer = getFirstMember - getSecondMember;
-      break;
-    case 3:
-      console.log(`Question: ${getFirstMember} * ${getMultiplier}`);
-      answer = getFirstMember * getMultiplier;
-      break;
-    default:
-  }
-  return String(answer);
+const getQuestion = () => {
+  const num1 = getRandomInt(0, 10);
+  const num2 = getRandomInt(0, 10);
+  const operation = getRandomInt(0, 2);
+  const expression = (x, y, operator) => {
+    switch (operator) {
+      case 0: return ['*', x * y];
+      case 1: return ['+', x + y];
+      default: return ['-', x - y];
+    }
+  };
+  const [operator, result] = expression(num1, num2, operation);
+  const question = `${num1} ${operator} ${num2}`;
+  const answer = String(result);
+  return { question, answer };
 };
 
-export default () => game(task, calc);
+export default () => game({ task, getQuestion });

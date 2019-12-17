@@ -1,7 +1,4 @@
-# nodejs-package
-
 [![Maintainability](https://api.codeclimate.com/v1/badges/e0b5d4410f245cf24efa/maintainability)](https://codeclimate.com/github/MrFSP/project-lvl1-s504/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/e0b5d4410f245cf24efa/test_coverage)](https://codeclimate.com/github/MrFSP/project-lvl1-s504/test_coverage)
 [![Build Status](https://travis-ci.com/MrFSP/project-lvl1-s504.svg?branch=master)](https://travis-ci.com/MrFSP/project-lvl1-s504)
 
 ## Проект Brain Games / Профессия Бэкенд JavaScript (node.js)
@@ -29,6 +26,8 @@
 ### Описание
 
 В рамках проекта необходимо реализовать набор мини-игр, запускаемых из консоли. Будем называть их "Игры разума".
+
+### Демонстрации:
 
 ### global install:                https://asciinema.org/a/RLieku85TZWlstQyMtJ35myT7
 ### brain-even asciinema:          https://asciinema.org/a/yFdJ0nsP9iStnL8boZl588kmB

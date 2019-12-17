@@ -1,4 +1,4 @@
-import { getRandomInt } from '../gamemodules/functions';
+import { getRandomInt } from '../other/functions';
 
 import game from '..';
 
@@ -34,11 +34,12 @@ const getRanCompNum = (max) => {
   return answer;
 };
 
-const prime = () => {
+const getQuestion = () => {
   const isSimpleForGame = getRandomInt(0, 1) === 1;
-  const question = isSimpleForGame ? getRanSimpleNum(maxNum) : getRanCompNum(maxNum);
-  console.log(`Question: ${question}`);
-  return isSimpleNumber(question) === true ? 'yes' : 'no';
+  const number = isSimpleForGame ? getRanSimpleNum(maxNum) : getRanCompNum(maxNum);
+  const question = String(number);
+  const answer = isSimpleNumber(question) === true ? 'yes' : 'no';
+  return { question, answer };
 };
 
-export default () => game(task, prime);
+export default () => game({ task, getQuestion });
