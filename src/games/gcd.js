@@ -14,7 +14,7 @@ const getNumber = (minCommonDivisor) => {
   return result;
 };
 
-const num2 = (num1, minCommonDivisor) => {
+const number2 = (num1, minCommonDivisor) => {
   let answer = getNumber(minCommonDivisor);
   while (num1 === answer) {
     answer = getNumber(minCommonDivisor);
@@ -22,24 +22,25 @@ const num2 = (num1, minCommonDivisor) => {
   return answer;
 };
 
-const getQuestion = () => {
+const getNumbers = () => {
   const ranMinCommonDivisor = getRandomInt(2, maxRanMinCommonDivisor);
-  const number1 = getNumber(ranMinCommonDivisor);
-  const number2 = num2(number1, ranMinCommonDivisor);
-  const question = `${number1} ${number2}`;
+  const num1 = getNumber(ranMinCommonDivisor);
+  const num2 = number2(num1, ranMinCommonDivisor);
+  return { num1, num2 };
+};
 
-  const gcd = (n1, n2) => {
-    const minNumber = n1 < n2 ? n1 : n2;
-    let divisor = minNumber;
-    while (divisor > 2) {
-      if ((isInt(n1, divisor) === true) && (isInt(n2, divisor) === true)) {
-        break;
-      }
-      divisor -= 1;
+const getQuestion = () => {
+  const { num1, num2 } = getNumbers();
+  const minNumber = num1 < num2 ? num1 : num2;
+  let divisor = minNumber;
+  while (divisor > 2) {
+    if ((isInt(num1, divisor) === true) && (isInt(num2, divisor) === true)) {
+      break;
     }
-    return String(divisor);
-  };
-  const answer = gcd(number1, number2);
+    divisor -= 1;
+  }
+  const question = `${num1} ${num2}`;
+  const answer = String(divisor);
   return { question, answer };
 };
 
