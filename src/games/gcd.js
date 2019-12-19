@@ -1,4 +1,4 @@
-import { getRandomInt, isInt } from '../functionmodules/functions';
+import { getRandomInt, isInt } from '../utils/functions';
 
 import game from '..';
 
