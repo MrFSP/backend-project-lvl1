@@ -2,46 +2,38 @@ import { getRandomInt, isInt } from '../utils/functions';
 
 import game from '..';
 
-const highBorderOfNumbers = 100; // High border of numbers
-const maxRanMinCommonDivisor = 20; // Max number of random min common divisor
-const task = 'Find the greatest common divisor of given numbers.\n';
+const highBorderOfNumbers = 100; // High border of numbers (min 100)
 
-const getNumber = (minCommonDivisor) => {
-  let result;
-  while (result % minCommonDivisor !== 0) {
-    result = getRandomInt(2, highBorderOfNumbers);
+const task = 'Find the greatest common divisor of given numbers.';
+
+const getNum = () => {
+  const multy = getRandomInt(2, highBorderOfNumbers / 10);
+  const num1 = multy * getRandomInt(2, 10);
+  let num2 = num1;
+  while (num1 === num2) {
+    num2 = multy * getRandomInt(2, 10);
   }
-  return result;
-};
-
-const number2 = (num1, minCommonDivisor) => {
-  let answer = getNumber(minCommonDivisor);
-  while (num1 === answer) {
-    answer = getNumber(minCommonDivisor);
-  }
-  return answer;
-};
-
-const getNumbers = () => {
-  const ranMinCommonDivisor = getRandomInt(2, maxRanMinCommonDivisor);
-  const num1 = getNumber(ranMinCommonDivisor);
-  const num2 = number2(num1, ranMinCommonDivisor);
   return { num1, num2 };
 };
 
-const getQuestion = () => {
-  const { num1, num2 } = getNumbers();
-  const minNumber = num1 < num2 ? num1 : num2;
+const getDiv = (n1, n2) => {
+  const minNumber = n1 < n2 ? n1 : n2;
   let divisor = minNumber;
   while (divisor > 2) {
-    if ((isInt(num1, divisor) === true) && (isInt(num2, divisor) === true)) {
+    if ((isInt(n1, divisor) === true) && (isInt(n2, divisor) === true)) {
       break;
     }
     divisor -= 1;
   }
+  return divisor;
+};
+
+const gcd = () => {
+  const { num1, num2 } = getNum();
+  const divisor = getDiv(num1, num2);
   const question = `${num1} ${num2}`;
   const answer = String(divisor);
   return { question, answer };
 };
 
-export default () => game({ task, getQuestion });
+export default () => game(task, gcd);

@@ -4,14 +4,14 @@ import game from '..';
 
 const maxNumber = 100;
 
-const task = 'Answer "yes" if number even otherwise answer "no".\n';
+const task = 'Answer "yes" if number even otherwise answer "no".';
+
+const isEven = (num) => num % 2 === 0;
 
 const getQuestion = () => {
-  const number = getRandomInt(0, maxNumber);
-  const question = String(number);
-  const isEven = number % 2 === 0;
-  const answer = isEven ? 'yes' : 'no';
+  const question = getRandomInt(0, maxNumber);
+  const answer = isEven(question) ? 'yes' : 'no';
   return { question, answer };
 };
 
-export default () => game({ task, getQuestion });
+export default () => game(task, getQuestion);
