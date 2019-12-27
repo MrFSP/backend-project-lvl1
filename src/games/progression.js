@@ -11,25 +11,22 @@ const maxFirstMemberOfProgr = 9; // Max first member of Arithmetic progression
 
 export const task = 'What number is missing in the progression?';
 
-const getStepOfProgr = () => getRandomInt(minStepOfProgr, maxStepOfProgr);
-const getIndexOfHiddenNumber = () => getRandomInt(0, progressionLength - 1);
-
 const arProgression = () => {
-  const stepOfProgr = getStepOfProgr();
-  const indexOfHiddenNumber = getIndexOfHiddenNumber();
-  const firstMemberOfProgr = getRandomInt(1, maxFirstMemberOfProgr);
+  const step = getRandomInt(minStepOfProgr, maxStepOfProgr);
+  const indexOfHiddenNumber = getRandomInt(0, progressionLength - 1);
+  const firstMember = getRandomInt(1, maxFirstMemberOfProgr);
   let answer;
   let progression = '';
   for (let i = 0; i < progressionLength; i += 1) {
-    const currentMemberOfProgr = firstMemberOfProgr + (i * stepOfProgr);
+    const currentMember = firstMember + (i * step);
     if (i !== indexOfHiddenNumber) {
-      progression = `${progression}${currentMemberOfProgr} `;
+      progression = `${progression}${currentMember} `;
     } else {
-      answer = String(currentMemberOfProgr);
+      answer = String(currentMember);
       progression = `${progression}.. `;
     }
   }
-  const question = progression;
+  const question = progression.trim();
   return { question, answer };
 };
 

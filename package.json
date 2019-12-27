@@ -7,7 +7,6 @@
     "brain-games",
     "hexlet.io"
   ],
-  "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
@@ -56,8 +55,6 @@
     "jest": "^24.9.0",
     "jest-cli": "^24.9.0",
     "source-map-support": "git+https://github.com/evanw/node-source-map-support.git",
-    "tsutils": "^3.17.1",
-    "typescript": "^3.7.3"
   },
   "dependencies": {
     "readline-sync": "^1.4.10"
