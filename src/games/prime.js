@@ -7,6 +7,9 @@ const maxNum = 100; // High border of numbers
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
+  if (number < 2) {
+    return false;
+  }
   for (let i = 2; i <= number / 2; i += 1) {
     if (number % i === 0) return false;
   }
@@ -15,7 +18,6 @@ const isPrime = (number) => {
 // Get random simple number on the segment [2, max]
 const getRanNum = (str, max) => {
   let answer;
-  // eslint-disable-next-line default-case
   switch (str) {
     case 'simple':
       answer = getRandomInt(3, max);
@@ -29,13 +31,14 @@ const getRanNum = (str, max) => {
         answer = getRandomInt(2, max);
       }
       break;
+    default:
+      return null;
   }
   return answer;
 };
 
 const prime = () => {
-  const isPrimeForGame = getRandomInt(0, 1) === 1;
-  const number = isPrimeForGame ? getRanNum('simple', maxNum) : getRanNum('complex', maxNum);
+  const number = getRandomInt(0, 1) === 1 ? getRanNum('simple', maxNum) : getRanNum('complex', maxNum);
   const question = number;
   const answer = isPrime(question) === true ? 'yes' : 'no';
   return { question, answer };

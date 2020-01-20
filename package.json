@@ -44,18 +44,13 @@
     "@babel/plugin-proposal-pipeline-operator": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
     "babel-eslint": "^10.0.3",
-    "babel-jest": "^24.9.0",
-    "debug": "^4.1.1",
     "eslint": "^6.3.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.21.0",
-    "jest": "^24.9.0",
-    "jest-cli": "^24.9.0",
-    "source-map-support": "git+https://github.com/evanw/node-source-map-support.git"
+    "eslint-plugin-import": "^2.18.2"
   },
   "dependencies": {
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "source-map-support": "^0.5.16"
   }
 }

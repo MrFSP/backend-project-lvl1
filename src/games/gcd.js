@@ -16,7 +16,7 @@ const getNum = () => {
   return { num1, num2 };
 };
 
-const getDiv = (n1, n2) => {
+const getGreatestCommonDivisor = (n1, n2) => {
   const minNumber = n1 < n2 ? n1 : n2;
   let divisor = minNumber;
   while (divisor > 2) {
@@ -30,9 +30,8 @@ const getDiv = (n1, n2) => {
 
 const gcd = () => {
   const { num1, num2 } = getNum();
-  const divisor = getDiv(num1, num2);
+  const answer = String(getGreatestCommonDivisor(num1, num2));
   const question = `${num1} ${num2}`;
-  const answer = String(divisor);
   return { question, answer };
 };
 

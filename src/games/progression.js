@@ -15,14 +15,13 @@ const arProgression = () => {
   const step = getRandomInt(minStepOfProgr, maxStepOfProgr);
   const indexOfHiddenNumber = getRandomInt(0, progressionLength - 1);
   const firstMember = getRandomInt(1, maxFirstMemberOfProgr);
-  let answer;
+  const answer = String(firstMember + (indexOfHiddenNumber * step));
   let progression = '';
   for (let i = 0; i < progressionLength; i += 1) {
     const currentMember = firstMember + (i * step);
     if (i !== indexOfHiddenNumber) {
       progression = `${progression}${currentMember} `;
     } else {
-      answer = String(currentMember);
       progression = `${progression}.. `;
     }
   }
