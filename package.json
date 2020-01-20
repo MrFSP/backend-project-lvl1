@@ -32,7 +32,6 @@
   "bugs": {
     "url": "https://github.com/MrFSP/project-lvl1-s504/issues"
   },
-  },
   "homepage": "https://github.com/MrFSP/project-lvl1-s504#readme",
   "devDependencies": {
     "@babel/cli": "^7.7.4",
