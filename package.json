@@ -1,5 +1,5 @@
 {
-  "name": "y",
+  "name": "brain-games",
   "version": "1.0.0",
   "description": "Project #1 within education on hexlet.io in profession 'Backend JavaScript(Node.js)'",
   "keywords": [
@@ -37,7 +37,6 @@
     "@babel/cli": "^7.7.4",
     "@babel/core": "^7.7.4",
     "@babel/node": "^7.7.4",
-    "@babel/plugin-proposal-pipeline-operator": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.3.0",

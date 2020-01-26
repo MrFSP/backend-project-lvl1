@@ -15,7 +15,7 @@ const calculateExpression = (x, y, operator) => {
   }
 };
 
-const calc = () => {
+const getData = () => {
   const num1 = getRandomInt(0, 10);
   const num2 = getRandomInt(0, 10);
   const operation = operators.charAt(getRandomInt(0, operators.length - 1));
@@ -24,4 +24,4 @@ const calc = () => {
   return { question, answer };
 };
 
-export default () => game(task, calc);
+export default () => game(task, getData);

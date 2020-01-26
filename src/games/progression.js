@@ -4,29 +4,29 @@ import game from '..';
 
 // Arithmetic progression
 
-const minStepOfProgr = 1; // Min step of Arithmetic progression
-const maxStepOfProgr = 9; // Max step of Arithmetic progression
-const progressionLength = 10; // Number of members of Arithmetic progression
-const maxFirstMemberOfProgr = 9; // Max first member of Arithmetic progression
+const minStepOfArithmeticProgr = 1;
+const maxStepOfArithmeticProgr = 9;
+const arithmeticProgressionLength = 10;
+const maxFirstMemberOfArithmeticProgr = 9;
 
 export const task = 'What number is missing in the progression?';
 
-const arProgression = () => {
-  const step = getRandomInt(minStepOfProgr, maxStepOfProgr);
-  const indexOfHiddenNumber = getRandomInt(0, progressionLength - 1);
-  const firstMember = getRandomInt(1, maxFirstMemberOfProgr);
+const getData = () => {
+  const step = getRandomInt(minStepOfArithmeticProgr, maxStepOfArithmeticProgr);
+  const indexOfHiddenNumber = getRandomInt(0, arithmeticProgressionLength - 1);
+  const firstMember = getRandomInt(1, maxFirstMemberOfArithmeticProgr);
   const answer = String(firstMember + (indexOfHiddenNumber * step));
-  let progression = '';
-  for (let i = 0; i < progressionLength; i += 1) {
+  let question = '';
+  for (let i = 0; i < arithmeticProgressionLength; i += 1) {
     const currentMember = firstMember + (i * step);
     if (i !== indexOfHiddenNumber) {
-      progression = `${progression}${currentMember} `;
+      question = `${question}${currentMember} `;
     } else {
-      progression = `${progression}.. `;
+      question = `${question}.. `;
     }
   }
-  const question = progression.trim();
+  question = question.trim();
   return { question, answer };
 };
 
-export default () => game(task, arProgression);
+export default () => game(task, getData);

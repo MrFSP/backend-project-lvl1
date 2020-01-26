@@ -8,10 +8,10 @@ const task = 'Answer "yes" if number even otherwise answer "no".';
 
 const isEven = (num) => num % 2 === 0;
 
-const even = () => {
+const getData = () => {
   const question = getRandomInt(0, maxNumber);
   const answer = isEven(question) ? 'yes' : 'no';
   return { question, answer };
 };
 
-export default () => game(task, even);
+export default () => game(task, getData);

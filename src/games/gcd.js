@@ -6,7 +6,7 @@ const highBorderOfNumbers = 100; // High border of numbers (min 100)
 
 const task = 'Find the greatest common divisor of given numbers.';
 
-const getNum = () => {
+const getRandomNumbersForGame = () => {
   const multy = getRandomInt(2, highBorderOfNumbers / 10);
   const num1 = multy * getRandomInt(2, 10);
   let num2 = num1;
@@ -28,11 +28,11 @@ const getGreatestCommonDivisor = (n1, n2) => {
   return divisor;
 };
 
-const gcd = () => {
-  const { num1, num2 } = getNum();
+const getData = () => {
+  const { num1, num2 } = getRandomNumbersForGame();
   const answer = String(getGreatestCommonDivisor(num1, num2));
   const question = `${num1} ${num2}`;
   return { question, answer };
 };
 
-export default () => game(task, gcd);
+export default () => game(task, getData);

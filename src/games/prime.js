@@ -37,11 +37,11 @@ const getRanNum = (str, max) => {
   return answer;
 };
 
-const prime = () => {
+const getData = () => {
   const number = getRandomInt(0, 1) === 1 ? getRanNum('simple', maxNum) : getRanNum('complex', maxNum);
   const question = number;
-  const answer = isPrime(question) === true ? 'yes' : 'no';
+  const answer = isPrime(question) ? 'yes' : 'no';
   return { question, answer };
 };
 
-export default () => game(task, prime);
+export default () => game(task, getData);
