@@ -6,7 +6,7 @@ const maxNum = 100; // High border of numbers
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrime = (number) => {
+export const isPrime = (number) => {
   if (number < 2) {
     return false;
   }
@@ -16,19 +16,20 @@ const isPrime = (number) => {
   return true;
 };
 // Get random simple number on the segment [2, max]
-const getRanNum = (str, max) => {
+export const getRandomTypeNumber = (max = maxNum) => {
+  const typeNumber = getRandomInt(0, 1) === 1 ? 'prime' : 'complex';
   let answer;
-  switch (str) {
-    case 'simple':
-      answer = getRandomInt(3, max);
-      while (isPrime(answer) === true) {
-        answer = getRandomInt(3, max);
+  switch (typeNumber) {
+    case 'prime':
+      answer = getRandomInt(2, max);
+      while (!isPrime(answer)) {
+        answer = getRandomInt(2, max);
       }
       break;
     case 'complex':
-      answer = getRandomInt(2, max);
-      while (isPrime(answer) !== true) {
-        answer = getRandomInt(2, max);
+      answer = getRandomInt(4, max);
+      while (isPrime(answer)) {
+        answer = getRandomInt(4, max);
       }
       break;
     default:
@@ -38,8 +39,7 @@ const getRanNum = (str, max) => {
 };
 
 const getData = () => {
-  const number = getRandomInt(0, 1) === 1 ? getRanNum('simple', maxNum) : getRanNum('complex', maxNum);
-  const question = number;
+  const question = getRandomTypeNumber();
   const answer = isPrime(question) ? 'yes' : 'no';
   return { question, answer };
 };
