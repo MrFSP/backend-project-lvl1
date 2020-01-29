@@ -6,7 +6,7 @@ const maxNum = 100; // High border of numbers
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-export const isPrime = (number) => {
+const isPrime = (number) => {
   if (number < 2) {
     return false;
   }
@@ -16,7 +16,7 @@ export const isPrime = (number) => {
   return true;
 };
 // Get random simple number on the segment [2, max]
-export const getRandomTypeNumber = (max = maxNum) => {
+const getRandomTypeNumber = (max = maxNum) => {
   const typeNumber = getRandomInt(0, 1) === 1 ? 'prime' : 'complex';
   let answer;
   switch (typeNumber) {
