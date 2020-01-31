@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.com/MrFSP/project-lvl1-s504.svg?branch=master)](https://travis-ci.com/MrFSP/project-lvl1-s504)
 
 ## Проект Brain Games / Профессия Бэкенд JavaScript (node.js)
+https://ru.hexlet.io/professions/backend/projects/44
 
 ### Уровень: 1
 
@@ -27,23 +28,42 @@
 
 В рамках проекта необходимо реализовать набор мини-игр, запускаемых из консоли. Будем называть их "Игры разума".
 
-### Демонстрации:
-
-### global install:                https://asciinema.org/a/RLieku85TZWlstQyMtJ35myT7
-### brain-even asciinema:          https://asciinema.org/a/yFdJ0nsP9iStnL8boZl588kmB
-### brain-calc asciinema:          https://asciinema.org/a/R0zgYCrbMkZEpGK6tKOhceIeU
-### brain-gcd asciinema:           https://asciinema.org/a/RLer2NTw7xYvxwWSi0OxU8B2d
-### brain-progression asciinema:   https://asciinema.org/a/3kTIU3qgF9m2D6GB3GIQstpjY
-### brain-prime asciinema:         https://asciinema.org/a/3TR0x0isOHrAkaRjq9lcRwKHM
-
-### Setup
+### Установка
 
 ```sh
 $ make install
 ```
 
-### Run tests
+### Запуск игр
 
 ```sh
-$ make test
-```
+$ brain-even
+$ brain-calc
+$ brain-gcd
+$ brain-progression
+$ brain-prime
+``` 
+
+### Демонстрации:
+
+Установка: https://asciinema.org/a/296967
+```sh
+$ brain-even
+```          
+brain-even asciinema: https://asciinema.org/a/296968
+```sh
+$ brain-calc
+```  
+brain-calc asciinema: https://asciinema.org/a/296971
+```sh
+$ brain-gcd
+```  
+brain-gcd asciinema: https://asciinema.org/a/296975
+```sh
+$ brain-progression
+```  
+brain-progression asciinema: https://asciinema.org/a/296976
+```sh
+$ brain-prime
+```  
+brain-prime asciinema:         https://asciinema.org/a/296978

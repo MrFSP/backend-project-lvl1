@@ -1,11 +1,13 @@
 install:
-	npm install
+	npm run build
+	npm publish --dry-run
+	sudo npm link
 
 start:
 	npx babel-node src/bin/brain-prime.js
 
 publish:
-	--dry-run
+	npm publish --dry-run
 
 lint:
 	npx eslint .
