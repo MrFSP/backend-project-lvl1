@@ -1,5 +1,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/e0b5d4410f245cf24efa/maintainability)](https://codeclimate.com/github/MrFSP/project-lvl1-s504/maintainability)
-[![Build Status](https://travis-ci.com/MrFSP/project-lvl1-s504.svg?branch=master)](https://travis-ci.com/MrFSP/project-lvl1-s504)
+[![Build Status](https://travis-ci.com/MrFSP/backend-project-lvl1.svg?branch=master)](https://travis-ci.com/MrFSP/backend-project-lvl1)
 
 ## Проект Brain Games / Профессия Бэкенд JavaScript (node.js)
 https://ru.hexlet.io/professions/backend/projects/44
