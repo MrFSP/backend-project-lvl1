@@ -78,6 +78,7 @@ Congratulations, Roman!
 ### Установка
 
 ```sh
+$ npm install
 $ make install
 ```
 
