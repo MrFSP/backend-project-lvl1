@@ -1,4 +1,5 @@
 install:
+	npm install
 	npm run build
 	npm publish --dry-run
 	sudo npm link
