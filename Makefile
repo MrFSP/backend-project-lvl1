@@ -1,8 +1,10 @@
 install:
-	npm install
 	npm run build
 	npm publish --dry-run
 	sudo npm link
+
+uninstall:
+	sudo npm uninstall -g brain-games
 
 start:
 	npx babel-node src/bin/brain-prime.js
